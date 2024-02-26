@@ -416,9 +416,6 @@ class WebSocketResponse(StreamResponse):
             self._set_code_close_transport(WSCloseCode.ABNORMAL_CLOSURE)
             return True
 
-        if self._closing:
-            return True
-
         reader = self._reader
         assert reader is not None
         try:
